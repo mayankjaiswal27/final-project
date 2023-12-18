@@ -1,122 +1,67 @@
-<!-- subtasks.index.blade.php -->
-
+{{-- <!-- resources/views/subtasks/index.blade.php -->
 @extends('layouts.app1')
 
 @section('content')
-    <style>
-        /* Add your custom CSS styles here */
+    <h1>Subtasks for Project: {{ $project->name }}</h1>
 
-        .container {
-            /* Add container styles */
-            margin-top: 20px;
-            max-width: 600px; /* Set a maximum width for better readability on larger screens */
-            margin-left: auto;
-            margin-right: auto;
-        }
+    <ul>
+        @forelse($subtasks as $subtask)
+            <li>{{ $subtask->name }}</li>
+        @empty
+            <li>No subtasks found for this project.</li>
+        @endforelse
+    </ul>
+@endsection
 
-        .card {
-            /* Add card styles */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
+<!-- resources/views/subtasks/index.blade.php -->
+@extends('layouts.app1')
 
-        .card-header {
-            /* Add card header styles */
-            background-color: #007bff;
-            color: #fff;
-            padding: 10px;
-        }
+@section('content')
+    <h1>Subtasks for Project: {{ $project->name }}</h1>
 
-        .card-body {
-            /* Add card body styles */
-            padding: 20px;
-        }
+    <ul>
+        @forelse($subtasks as $subtask)
+            <li>
+                {{ $subtask->name }}
 
-        .btn {
-            /* Add button styles */
-            margin-bottom: 10px;
-        }
+                <!-- Display "edited" message if the subtask has been updated -->
+                @unless ($subtask->created_at->eq($subtask->updated_at))
+                    <small class="text-sm text-gray-600"> &middot; {{ __('edited') }}</small>
+                @endunless
+            </li>
+        @empty
+            <li>No subtasks found for this project.</li>
+        @endforelse
+    </ul>
+@endsection
+ --}}
 
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
+ @extends('layouts.app1')
 
-        li {
-            margin-bottom: 10px;
-        }
+@section('content')
+    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+        <h1 class="my-4">Subtasks</h1>
 
-        .btn-group .btn {
-            margin-right: 10px;
-        }
+        <a href="{{ route('subtasks.create', $projectId) }}" class="btn btn-primary mb-3">Create Subtask</a>
 
-        .btn-primary,
-        .btn-danger,
-        .btn-info {
-            padding: 8px 15px;
-            border-radius: 4px;
-            border: 1px solid transparent; /* Add transparent border for all buttons */
-            transition: border-color 0.3s ease-in-out; /* Add transition effect for border color */
-        }
-
-        .btn-danger {
-            border: 1px solid #dc3545; /* Add border color for danger button */
-        }
-
-        .btn-info {
-            border: 1px solid #17a2b8; /* Add border color for info button */
-        }
-
-        .btn-primary:hover,
-        .btn-danger:hover,
-        .btn-info:hover {
-            border-color: #007bff; /* Change border color on hover for all buttons */
-        }
-
-        @media (max-width: 768px) {
-            .card-body {
-                padding: 15px;
-            }
-
-            .btn-primary,
-            .btn-danger,
-            .btn-info {
-                padding: 6px 12px;
-            }
-        }
-    </style>
-
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Subtasks for Project: {{ $project->name }}</div>
-
-                    <div class="card-body">
-                        <a href="{{ route('projects.index') }}" class="btn btn-secondary">Back to Projects</a>
-
-                        <h3>Subtasks:</h3>
-                        <ul>
-                            @forelse($subtasks as $subtask)
-                                <li>{{ $subtask->name }}
-                                    <div class="btn-group" role="group">
-                                        <a href="{{ route('subtasks.edit', ['project' => $project->id, 'subtask' => $subtask->id]) }}" class="btn btn-primary btn-sm">Edit</a>
-
-                                        <form action="{{ route('subtasks.destroy', ['project' => $project->id, 'subtask' => $subtask->id]) }}" method="POST">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
-                                        </form>
-                                    </div>
-                                </li>
-                            @empty
-                                <li>No subtasks available.</li>
-                            @endforelse
-                        </ul>
+        <ul class="list-group">
+            @forelse($subtasks as $subtask)
+                <li class="list-group-item">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <span class="font-weight-bold">{{ $subtask->name }}</span>
+                        <div class="btn-group" role="group">
+                            <a href="{{ route('subtasks.edit', ['project' => $projectId, 'subtask' => $subtask->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('subtasks.destroy', ['project' => $projectId, 'subtask' => $subtask->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </li>
+            @empty
+                <li class="list-group-item">No subtasks found.</li>
+            @endforelse
+        </ul>
     </div>
 @endsection

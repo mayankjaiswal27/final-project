@@ -77,10 +77,15 @@ public function update(Request $request, Project $project)
     return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
 }
 
-    public function destroy(Project $project)
-    {
-        $project->delete();
+public function destroy(Project $project): RedirectResponse
+{
+    // Authorization check
+    $this->authorize('delete', $project);
 
-        return redirect()->route('projects.index')->with('success', 'Project deleted successfully!');
-    }
+    // Delete the project
+    $project->delete();
+
+    // Redirect to the Projects index
+    return redirect()->route('projects.index')->with('success', 'Project deleted successfully!');
+}
 }
