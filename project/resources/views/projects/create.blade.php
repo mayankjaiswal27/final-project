@@ -3,12 +3,15 @@
 @extends('layouts.app1')
 
 @section('content')
- <style>
+    <style>
         /* Add your custom CSS styles here */
 
         .container {
             /* Add container styles */
             margin-top: 20px;
+            max-width: 600px; /* Set a maximum width for better readability on larger screens */
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .card {
@@ -55,7 +58,7 @@
         }
 
         button {
-
+            /* Add button styles */
             padding: 10px 20px;
             border: none;
             border-radius: 4px;
@@ -65,7 +68,23 @@
         button:hover {
             /* Add button hover styles */
             background-color: #218838;
-            color: white
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 15px;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            textarea {
+                padding: 8px;
+            }
+
+            button {
+                padding: 8px 15px;
+            }
         }
     </style>
     <div class="container">
@@ -94,7 +113,7 @@
                             </div>
 
                             <div class="form-group">
-                                <button type="submit" >Create Project</button>
+                                <button type="submit">Create Project</button>
                             </div>
                         </form>
                     </div>
@@ -111,7 +130,7 @@
             var projectId = 123; // Replace with the actual project ID
 
             // Update the 'Add Subtask' link with the dynamic project ID
-            this.href = this.href.replace('placeholder', Id);
+            this.href = this.href.replace('placeholder', projectId);
         });
     </script>
 @endsection

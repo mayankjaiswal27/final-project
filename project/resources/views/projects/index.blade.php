@@ -6,6 +6,9 @@
         /* Custom styles */
         .container {
             margin-top: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .card {
@@ -90,6 +93,23 @@
 
         .btn-group .btn {
             margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 15px;
+            }
+
+            input[type="text"],
+            input[type="date"],
+            textarea {
+                padding: 10px;
+                margin-bottom: 10px;
+            }
+
+            button {
+                padding: 10px 15px;
+            }
         }
     </style>
 
