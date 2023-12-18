@@ -32,6 +32,11 @@ Route::middleware('auth')->group(function () {
 });
 // routes/web.php or routes/api.php
 Route::get('/projects', [ProjectController::class, 'index']);
+Route::get('/projects/edit', 'ProjectController@edit')->name('projects.edit');
+Route::get('/projects/create', 'ProjectController@create')->name('projects.create');
+Route::get('/projects/destroy', 'ProjectController@destroy')->name('projects.destroy');
+
+
 Route::get('/subtasks/{project}', [SubtaskController::class, 'index'])->name('subtasks.index');
 
 
