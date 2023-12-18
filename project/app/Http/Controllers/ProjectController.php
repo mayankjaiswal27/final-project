@@ -40,12 +40,17 @@ class ProjectController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            // Add other validation rules as needed
         ]);
 
-        $project->update($request->all());
+        $project->update([
+            'name' => $request->name,
+            // Add other fields as needed
+        ]);
 
-        return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
+        return redirect()->route('projects.index')->with('success', 'Project updated successfully');
     }
+    
 
     public function destroy(Project $project)
     {
