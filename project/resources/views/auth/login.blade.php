@@ -137,7 +137,7 @@
         </form>
 
         <div class="signup-link">
-            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+            <p>Don't have an account? >{{ __('Register') }}</a></p>
         </div>
     </div>
 
