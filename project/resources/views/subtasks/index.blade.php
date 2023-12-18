@@ -1,5 +1,5 @@
 <!-- resources/views/subtasks/index.blade.php -->
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
     <h1>Subtasks for Project: {{ $project->name }}</h1>

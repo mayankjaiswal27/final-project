@@ -1,6 +1,6 @@
 <!-- resources/views/projects/index.blade.php -->
 
-@extends('layouts.app')
+@extends('layouts.app1')
 
 @section('content')
     <h1>Projects</h1>
@@ -13,3 +13,5 @@
         @endforeach
     </ul>
 @endsection
+
+
