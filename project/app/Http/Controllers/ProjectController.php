@@ -11,8 +11,19 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+        
 
         return view('projects.index', compact('projects'));
+    }
+    public function getCountOfProjects()
+    {
+        $projectsCount = Project::count(); // Get the count of projects
+        return $projectsCount;
+    }
+    public function getCountOfTasksToBeCompleted()
+    {
+        $tasksToBeCompletedCount = Project::where('completed', false)->count(); // Count tasks with completed attribute set to false
+        return $tasksToBeCompletedCount;
     }
 
     public function create()

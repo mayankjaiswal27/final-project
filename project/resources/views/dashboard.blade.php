@@ -1,9 +1,9 @@
 <x-app-layout>
-    <x-slot name="header">
+    {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Home') }}
         </h2>
-    </x-slot>
+    </x-slot> --}}
 <style>    .desktop {
     background-color: #ffffff;
     display: flex;
@@ -368,6 +368,8 @@
     line-height: normal;
 }
 
+
+
 .desktop .brainstorming-brings {
     position: absolute;
     width: 274px;
@@ -461,20 +463,20 @@
                     <div class="desktop">
                         <div class="div">
                           <div class="group">
-                            <div class="text-wrapper">Hi, Name!</div>
-                            <p class="p">You’ve some tasks to do today!</p>
+                            <div class="text-wrapper-11">Welcome, {{ Auth::user()->name }}</div>
+                            {{-- <p class="p">You’ve some tasks to do today!</p> --}}
                           </div>
                           <div class="group-2">
-                            <div class="overlap">
+                            {{-- <div class="overlap">
                               <div class="text-wrapper-2">Tasks to complete</div>
                               <p class="element"><span class="span">15</span> <span class="text-wrapper-3">/20</span></p>
                             </div>
                             <div class="overlap-group">
                               <p class="element-2"><span class="span">95</span> <span class="text-wrapper-3">%</span></p>
                               <div class="text-wrapper-4">Completion Rate</div>
-                            </div>
-                            <div class="overlap-group-2">
-                              <p class="element-projects"><span class="span">5 </span> <span class="text-wrapper-3">projects</span></p>
+                            </div> --}}
+                            <div class="overlap">
+                              <p class="element-projects"><span class="span">{{app('App\Http\Controllers\ProjectController')->getCountOfProjects()}} </span> <span class="text-wrapper-3">projects</span></p>
                               <div class="text-wrapper-4">Projects</div>
                             </div>
                           </div>
