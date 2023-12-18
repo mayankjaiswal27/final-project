@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="home.css" />
+    <style>
+        /* Existing styles remain unchanged */
+
+        .desktop .button {
+            position: absolute;
+            width: 150px;
+            height: 50px;
+            background-color: #6e58ff; /* Purple color */
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .desktop .overlap-group-wrapper {
+            position: absolute;
+            width: 189px;
+            height: 57px;
+            top: 759px;
+            left: 771px;
+        }
+
+        .desktop .overlap-wrapper {
+            position: absolute;
+            width: 189px;
+            height: 57px;
+            top: 759px;
+            left: 1148px;
+        }
+
+        /* Additional CSS for the Login and Sign-Up text */
+        .desktop .text-wrapper-2,
+        .desktop .text-wrapper-3 {
+            position: absolute;
+            top: 16px;
+            font-family: "Inter-Regular", Helvetica;
+            font-weight: 400;
+            color: #6e58ff; /* Purple color */
+            font-size: 20px;
+            letter-spacing: 3.5px;
+            line-height: normal;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="desktop">
+        <div class="div">
+            <div class="rectangle"></div>
+            <div class="group">
+                <div class="text-wrapper">Project Management Website</div>
+                <p class="p">In the fast-paced world of project execution, seamless collaboration and efficient task
+                    management are the cornerstones of success. Introducing [Your Project Management Platform], your
+                    ultimate destination for empowering teams, streamlining workflows, and achieving project milestones
+                    with ease.</p>
+            </div>
+            <div class="overlap-group-wrapper">
+                <div class="overlap">
+                    <!-- <div class="text-wrapper-2">Login</div> -->
+                </div>
+                <button class="button" onclick="location.href='login.html'">Login</button>
+            </div>
+            <div class="overlap-wrapper">
+                <div class="overlap">
+                    <!-- <div class="text-wrapper-3">Sign-Up</div> -->
+                </div>
+                <button class="button" onclick="location.href='signup.html'">Sign Up</button>
+            </div>
+            <div class="text-wrapper-4">PROJECT NAME</div>
+        </div>
+    </div>
+
+</body>
+
+</html>
