@@ -53,20 +53,11 @@ class ProjectController extends Controller
             // Add other validation rules as needed
         ]);
 
-<<<<<<< HEAD
-        $project->update([
-            'name' => $request->name,
-            // Add other fields as needed
-        ]);
-
-        return redirect()->route('projects.index')->with('success', 'Project updated successfully');
-=======
         // Update the Project
         $project->update($validated);
 
         // Redirect to the Projects index
         return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
->>>>>>> d627defc819a9ea8cd2107b7934d404407f5ea93
     }
     
 
