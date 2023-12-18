@@ -29,8 +29,7 @@
                             </div>
 
                             <div class="form-group">
-                                <a href="{{ route('subtasks.create', ['project' => 1]) }}" class="btn btn-primary">Add Subtask</a>
-                                <!-- Replace '1' with a default project ID or a placeholder value -->
+                                <a href="{{ route('subtasks.create', ['project' => 'placeholder']) }}" class="btn btn-primary" id="addSubtask">Add Subtask</a>
                                 <button type="submit" class="btn btn-primary">Create Project</button>
                             </div>
                         </form>
@@ -39,4 +38,16 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // JavaScript to handle updating the 'Add Subtask' link after project creation
+        document.getElementById('addSubtask').addEventListener('click', function () {
+            // Retrieve the project ID after creating the project (use an AJAX request or another method)
+            // For now, you can use a placeholder value
+            var projectId = 123; // Replace with the actual project ID
+
+            // Update the 'Add Subtask' link with the dynamic project ID
+            this.href = this.href.replace('placeholder', Id);
+        });
+    </script>
 @endsection

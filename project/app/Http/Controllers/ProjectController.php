@@ -22,18 +22,22 @@ class ProjectController extends Controller
     
         return view('projects.create', compact('project'));
     }
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'due_date' => 'required|date',
-        ]);
+    // ProjectController.php
 
-        $project = Project::create($request->all());
+public function store(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        // Add other validation rules as needed
+    ]);
 
-        return redirect()->route('projects.index')->with('success', 'Project created successfully!');
-    }
+    // Create the project
+    $project = Project::create($request->all());
+
+    // Redirect to the Projects index or update the URL dynamically
+    return redirect()->route('projects.index')->with('success', 'Project created successfully!');
+}
+
 
     public function edit(Project $project)
     {

@@ -19,6 +19,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="font-weight-bold">{{ $project->name }}</span>
                         <div class="btn-group" role="group">
+                            <a href="{{ route('subtasks.create', $project->id) }}" class="btn btn-primary btn-sm">Add Subtask</a><br>
                             <a href="{{ route('projects.edit', $project->id) }}" class="btn btn-primary btn-sm">Edit</a>
                             <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
                                 @csrf

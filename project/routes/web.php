@@ -29,7 +29,7 @@ Route::post('/projects', [ProjectController::class, 'store'])->name('projects.st
 });
 
 Route::get('/subtasks/{project}', [SubtaskController::class, 'index'])->name('subtasks.index');
-Route::get('/subtasks/create', [SubtaskController::class, 'create'])->name('subtasks.create');
+Route::get('/subtasks/{project}/create', [SubtaskController::class, 'create'])->name('subtasks.create');
     Route::post('/subtasks/{project}', [SubtaskController::class, 'store'])->name('subtasks.store');
     Route::get('/subtasks/{project}/{subtask}/edit', [SubtaskController::class, 'edit'])->name('subtasks.edit');
     Route::patch('/subtasks/{project}/{subtask}', [SubtaskController::class, 'update'])->name('subtasks.update');
