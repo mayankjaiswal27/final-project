@@ -3,6 +3,71 @@
 @extends('layouts.app1')
 
 @section('content')
+ <style>
+        /* Add your custom CSS styles here */
+
+        .container {
+            /* Add container styles */
+            margin-top: 20px;
+        }
+
+        .card {
+            /* Add card styles */
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            /* Add card header styles */
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+        }
+
+        .card-body {
+            /* Add card body styles */
+            padding: 20px;
+        }
+
+        .form-group {
+            /* Add form group styles */
+            margin-bottom: 20px;
+        }
+
+        label {
+            /* Add label styles */
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        textarea {
+            /* Add input styles */
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            /* Add button hover styles */
+            background-color: #218838;
+            color: white
+        }
+    </style>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -29,8 +94,7 @@
                             </div>
 
                             <div class="form-group">
-                                <a href="{{ route('subtasks.create', ['project' => 'placeholder']) }}" class="btn btn-primary" id="addSubtask">Add Subtask</a>
-                                <button type="submit" class="btn btn-primary">Create Project</button>
+                                <button type="submit" >Create Project</button>
                             </div>
                         </form>
                     </div>
