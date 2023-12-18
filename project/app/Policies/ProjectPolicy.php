@@ -1,16 +1,17 @@
 <?php
 
 namespace App\Policies;
-
+use App\Models\Project;
 use App\Models\User;
 
 class ProjectPolicy
 {
     /**
-     * Create a new policy instance.
+     * Determine whether the user can update the project.
      */
-    public function __construct()
+    public function update(User $user, Project $project): bool
     {
-        //
+        return $project->user->is($user);
     }
 }
+
