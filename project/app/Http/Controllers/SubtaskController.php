@@ -1,10 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Project;
-
-
 use App\Models\Subtask;
 use Illuminate\Http\Request;
 
@@ -15,6 +12,7 @@ class SubtaskController extends Controller
         $subtasks = $project->subtasks;
         return view('subtasks.index', compact('subtasks', 'project'));
     }
+    
 
     public function create(Project $project)
     {
@@ -34,21 +32,33 @@ class SubtaskController extends Controller
     }
 
     public function edit(Project $project, Subtask $subtask)
-    {
-        return view('subtasks.edit', compact('project', 'subtask'));
-    }
+{
+    $this->authorize('update', $subtask);
 
-    public function update(Request $request, Project $project, Subtask $subtask)
-    {
-        $request->validate([
-            'name' => 'required|string|max:255',
-        
-        ]);
+    return view('subtasks.edit', [
+        'project' => $project,
+        'subtask' => $subtask,
+    ]);
+}
 
-        $subtask->update($request->all());
 
-        return redirect()->route('subtasks.index', $project->id)->with('success', 'Subtask updated successfully!');
-    }
+public function update(Request $request, Project $project, Subtask $subtask)
+{
+    // Authorization check
+    $this->authorize('update', $subtask);
+
+    // Validation
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+    ]);
+
+    // Update the Subtask
+    $subtask->update($validated);
+
+    // Redirect to the Subtasks index for the specific Project
+    return redirect()->route('subtasks.index', $project->id)->with('success', 'Subtask updated successfully!');
+}
+
 
     public function destroy(Project $project, Subtask $subtask)
     {
