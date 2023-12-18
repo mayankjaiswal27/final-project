@@ -7,10 +7,10 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
-{
-    public function index()
+{public function index()
     {
         $projects = Project::all();
+
         return view('projects.index', compact('projects'));
     }
 
