@@ -11,7 +11,6 @@ class ProjectPolicy
      */
     public function update(User $user, Project $project): bool
     {
-        return $project->user->is($user);
+        return $project->user_id === $user->id;
     }
 }
-
