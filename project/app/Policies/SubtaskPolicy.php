@@ -7,12 +7,9 @@ use App\Models\Subtask;
 
 class SubtaskPolicy
 {
-    /**
-     * Determine whether the user can update the model.
-     */
-    public function update(User $user, Subtask $subtask): bool
+    
+    public function update(User $user, Subtask $subtask, Project $project): bool
     {
-        // Check if the user is the owner of the subtask
-        return $subtask->user->is($user);
+        return $project->user_id === $user->id;
     }
 }

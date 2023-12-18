@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SubtaskController;
 
+Route::get('/subtasks', [SubtaskController::class, 'index']);
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -34,5 +36,6 @@ Route::get('/subtasks/{project}/create', [SubtaskController::class, 'create'])->
     Route::get('/subtasks/{project}/{subtask}/edit', [SubtaskController::class, 'edit'])->name('subtasks.edit');
     Route::patch('/subtasks/{project}/{subtask}', [SubtaskController::class, 'update'])->name('subtasks.update');
     Route::delete('/subtasks/{project}/{subtask}', [SubtaskController::class, 'destroy'])->name('subtasks.destroy');
+    // Route::get('subtasks/{project}/{subtask}/edit', 'SubtaskController@edit')->name('subtasks.edit');
 
 require __DIR__.'/auth.php';
