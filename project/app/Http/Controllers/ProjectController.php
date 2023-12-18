@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\Project;
+use Illuminate\Auth\Access\AuthorizationException;
+
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
@@ -31,8 +32,13 @@ class ProjectController extends Controller
 
     public function edit(Project $project)
     {
-        $this->authorize('update', $project);
-
+        try {
+            $this->authorize('update', $project);
+        } catch (AuthorizationException $e) {
+            // Handle the authorization exception, e.g., redirect to an error page
+            abort(403, 'Unauthorized action.');
+        }
+    
         return view('projects.edit', compact('project'));
     }
 

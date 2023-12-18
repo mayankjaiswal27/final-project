@@ -6,21 +6,6 @@
 
     <ul>
         @forelse($subtasks as $subtask)
-            <li>{{ $subtask->name }}</li>
-        @empty
-            <li>No subtasks found for this project.</li>
-        @endforelse
-    </ul>
-@endsection
-
-<!-- resources/views/subtasks/index.blade.php -->
-@extends('layouts.app1')
-
-@section('content')
-    <h1>Subtasks for Project: {{ $project->name }}</h1>
-
-    <ul>
-        @forelse($subtasks as $subtask)
             <li>
                 {{ $subtask->name }}
 
@@ -28,26 +13,9 @@
                 @unless ($subtask->created_at->eq($subtask->updated_at))
                     <small class="text-sm text-gray-600"> &middot; {{ __('edited') }}</small>
                 @endunless
-            </li>
-        @empty
-            <li>No subtasks found for this project.</li>
-        @endforelse
-    </ul>
-@endsection
 
-<!-- resources/views/subtasks/index.blade.php -->
-@extends('layouts.app1')
-
-@section('content')
-    <h1>Subtasks for Project: {{ $project->name }}</h1>
-
-    <ul>
-        @forelse($subtasks as $subtask)
-            <li>
-                {{ $subtask->name }}
-                
                 <!-- Dropdown for editing subtask (if user is the owner) -->
-                @if ($subtask->user->is(auth()->user()))
+                @if ($subtask->user && $subtask->user->is(auth()->user()))
                     <x-dropdown>
                         <x-slot name="trigger">
                             <button>
