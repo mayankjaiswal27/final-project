@@ -4,17 +4,24 @@
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
-                <div class="shrink-0 flex items-center">
+                {{-- <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
                         <x-application-logo class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
-                </div>
+                </div> --}}
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Dashboard') }}
+                        {{ __('Home') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Projects') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Tasks') }}
+                    </x-nav-link>
+
                 </div>
             </div>
 
@@ -48,6 +55,9 @@
                                 {{ __('Log Out') }}
                             </x-dropdown-link>
                         </form>
+                        <x-dropdown-link :href="route('profile.edit')">
+                            {{ __('Settings') }}
+                        </x-dropdown-link>
                     </x-slot>
                 </x-dropdown>
             </div>
