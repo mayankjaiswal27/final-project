@@ -21,15 +21,6 @@
                 <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $project->name) }}" required>
             </div>
 
-            <div class="form-group">
-                <label for="description">Project Description:</label>
-                <textarea name="description" id="description" class="form-control" required>{{ old('description', $project->description) }}</textarea>
-            </div>
-
-            <div class="form-group">
-                <label for="due_date">Due Date:</label>
-                <input type="date" name="due_date" id="due_date" class="form-control" value="{{ old('due_date', $project->due_date) }}" required>
-            </div>
 
             <button type="submit" class="btn btn-primary">Update Project</button>
         </form>
