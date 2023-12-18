@@ -7,7 +7,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">Create a New Project with Subtasks</div>
+                    <div class="card-header">Create a New Project</div>
 
                     <div class="card-body">
                         <form method="POST" action="{{ route('projects.store') }}">
@@ -28,19 +28,10 @@
                                 <input type="date" name="due_date" id="due_date" class="form-control" required>
                             </div>
 
-                            <!-- Subtask Section -->
-                            <hr>
-                            <h4>Add Subtasks</h4>
-                            <div class="subtasks-container">
-                                <div class="subtask">
-                                    <label for="subtask_name[]">Subtask Name:</label>
-                                    <input type="text" name="subtask_name[]" class="form-control" required>
-                                </div>
-                            </div>
-                            <button type="button" class="btn btn-success" id="addSubtask">Add Another Subtask</button>
-
-                            <div class="form-group mt-3">
-                                <button type="submit" class="btn btn-primary">Create Project with Subtasks</button>
+                            <div class="form-group">
+                                <a href="{{ route('subtasks.create', ['project' => 1]) }}" class="btn btn-primary">Add Subtask</a>
+                                <!-- Replace '1' with a default project ID or a placeholder value -->
+                                <button type="submit" class="btn btn-primary">Create Project</button>
                             </div>
                         </form>
                     </div>
@@ -48,14 +39,4 @@
             </div>
         </div>
     </div>
-
-    <script>
-        // JavaScript to handle adding more subtask fields dynamically
-        document.getElementById('addSubtask').addEventListener('click', function () {
-            var subtasksContainer = document.querySelector('.subtasks-container');
-            var subtaskClone = subtasksContainer.firstElementChild.cloneNode(true);
-            subtaskClone.querySelector('input').value = ''; // Clear the input value
-            subtasksContainer.appendChild(subtaskClone);
-        });
-    </script>
 @endsection

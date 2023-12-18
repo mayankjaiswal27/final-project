@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\Models\Project;
 use Illuminate\Auth\Access\AuthorizationException;
-
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
-{public function index()
+{
+    public function index()
     {
         $projects = Project::all();
 
@@ -16,16 +17,20 @@ class ProjectController extends Controller
 
     public function create()
     {
-        return view('projects.create');
+        
+        $project = new Project();
+    
+        return view('projects.create', compact('project'));
     }
-
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'due_date' => 'required|date',
         ]);
 
-        Project::create($request->all());
+        $project = Project::create($request->all());
 
         return redirect()->route('projects.index')->with('success', 'Project created successfully!');
     }
@@ -38,7 +43,7 @@ class ProjectController extends Controller
             // Handle the authorization exception, e.g., redirect to an error page
             abort(403, 'Unauthorized action.');
         }
-    
+
         return view('projects.edit', compact('project'));
     }
 
@@ -50,6 +55,8 @@ class ProjectController extends Controller
         // Validation
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'due_date' => 'required|date',
             // Add other validation rules as needed
         ]);
 
@@ -59,7 +66,6 @@ class ProjectController extends Controller
         // Redirect to the Projects index
         return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
     }
-    
 
     public function destroy(Project $project)
     {
