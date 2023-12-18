@@ -39,37 +39,32 @@ public function store(Request $request)
 }
 
 
-    public function edit(Project $project)
-    {
-        try {
-            $this->authorize('update', $project);
-        } catch (AuthorizationException $e) {
-            // Handle the authorization exception, e.g., redirect to an error page
-            abort(403, 'Unauthorized action.');
-        }
-
-        return view('projects.edit', compact('project'));
+public function edit(Project $project)
+{
+    try {
+        // $this->authorize('update', $project);
+    } catch (AuthorizationException $e) {
+        abort(403, 'Unauthorized action.');
     }
 
-    public function update(Request $request, Project $project)
-    {
-        // Authorization check
-        $this->authorize('update', $project);
+    return view('projects.edit', compact('project'));
+}
 
-        // Validation
-        $validated = $request->validate([
-            'name' => 'required|string|max:255',
-            'description' => 'required|string',
-            'due_date' => 'required|date',
-            // Add other validation rules as needed
-        ]);
+public function update(Request $request, Project $project)
+{
+    // $this->authorize('update', $project);
 
-        // Update the Project
-        $project->update($validated);
+    $validated = $request->validate([
+        'name' => 'required|string|max:255',
+        'description' => 'required|string',
+        'due_date' => 'required|date',
+        // Add other validation rules as needed
+    ]);
 
-        // Redirect to the Projects index
-        return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
-    }
+    $project->update($validated);
+
+    return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
+}
 
     public function destroy(Project $project)
     {

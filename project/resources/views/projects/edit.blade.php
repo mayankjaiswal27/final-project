@@ -1,23 +1,37 @@
-<x-app-layout>
-    <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
+<!-- resources/views/projects/edit.blade.php -->
+
+@extends('layouts.app1')
+
+@section('content')
+    <div class="container">
+        <h1>Edit Project</h1>
+
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('projects.update', $project) }}">
             @csrf
-            @method('patch')
-            
-            <label for="name">{{ __('Project Name') }}</label>
-            <input
-                type="text"
-                name="name"
-                value="{{ old('name', $project->name) }}"
-                class="block w-full border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"
-            />
+            @method('PATCH')
 
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-
-            <div class="mt-4 space-x-2">
-                <x-primary-button>{{ __('Save') }}</x-primary-button>
-                <a href="{{ route('projects.index') }}">{{ __('Cancel') }}</a>
+            <div class="form-group">
+                <label for="name">Project Name:</label>
+                <input type="text" name="name" id="name" class="form-control" value="{{ old('name', $project->name) }}" required>
             </div>
+
+            <div class="form-group">
+                <label for="description">Project Description:</label>
+                <textarea name="description" id="description" class="form-control" required>{{ old('description', $project->description) }}</textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="due_date">Due Date:</label>
+                <input type="date" name="due_date" id="due_date" class="form-control" value="{{ old('due_date', $project->due_date) }}" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update Project</button>
         </form>
     </div>
-</x-app-layout>
+@endsection
