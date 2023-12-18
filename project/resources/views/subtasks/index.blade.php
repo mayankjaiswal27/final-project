@@ -16,6 +16,13 @@
                         <ul>
                             @forelse($subtasks as $subtask)
                                 <li>{{ $subtask->name }}</li>
+                                <a href="{{ route('subtasks.edit', ['project' => $project->id, 'subtask' => $subtask->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+
+                            <form action="{{ route('subtasks.destroy', ['project' => $project->id, 'subtask' => $subtask->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
+                            </form>
                             @empty
                                 <li>No subtasks available.</li>
                             @endforelse
