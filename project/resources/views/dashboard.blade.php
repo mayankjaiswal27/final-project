@@ -23,8 +23,8 @@
     position: absolute;
     width: 315px;
     height: 83px;
-    top: 134px;
-    left: 373px;
+    top: 33px;
+    left: 30px;
 }
 
 .desktop .text-wrapper {
@@ -55,8 +55,8 @@
     position: absolute;
     width: 1058px;
     height: 104px;
-    top: 276px;
-    left: 343px;
+    top: 176px;
+    left: 30px;
 }
 
 .desktop .overlap {
@@ -83,7 +83,7 @@
 
 .desktop .element {
     position: absolute;
-    top: 20px;
+    top: 45px;
     left: 23px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 400;
@@ -116,7 +116,7 @@
 
 .desktop .element-2 {
     position: absolute;
-    top: 20px;
+    top: 45px;
     left: 18px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 400;
@@ -150,7 +150,7 @@
 
 .desktop .element-projects {
     position: absolute;
-    top: 20px;
+    top: 45px;
     left: 17px;
     font-family: "Poppins-Medium", Helvetica;
     font-weight: 400;
@@ -315,8 +315,8 @@
     position: absolute;
     width: 1077px;
     height: 491px;
-    top: 420px;
-    left: 328px;
+    top: 320px;
+    left: 30px;
 }
 
 .desktop .frame-wrapper {
@@ -475,32 +475,6 @@
                             <div class="overlap-group-2">
                               <p class="element-projects"><span class="span">5 </span> <span class="text-wrapper-3">projects</span></p>
                               <div class="text-wrapper-4">Projects</div>
-                            </div>
-                          </div>
-                          <div class="overlap-wrapper">
-                            <div class="overlap-2">
-                              <div class="ellipse"></div>
-                              <div class="text-wrapper-5">Main Menu</div>
-                              <div class="group-3">
-                                <img class="img" src="assets/categoryhome.png" />
-                                <div class="text-wrapper-6">Home</div>
-                              </div>
-                              <div class="group-4">
-                                <img class="img" src="assets/task-square.png" />
-                                <div class="text-wrapper-7">Tasks</div>
-                              </div>
-                              <div class="group-5">
-                                <img class="img" src="assets/message.png" />
-                                <div class="text-wrapper-8">Messages</div>
-                              </div>
-                              <div class="group-6">
-                                <img class="img" src="assets/profile-2user.png" />
-                                <div class="text-wrapper-9">Members</div>
-                              </div>
-                              <div class="group-7">
-                                <img class="img" src="assets/setting-2.png" />
-                                <div class="text-wrapper-10">Settings</div>
-                              </div>
                             </div>
                           </div>
                           <div class="group-8">
