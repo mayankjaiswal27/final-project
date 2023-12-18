@@ -50,6 +50,7 @@ class ProjectController extends Controller
         // Validation
         $validated = $request->validate([
             'name' => 'required|string|max:255',
+            // Add other validation rules as needed
         ]);
 
         // Update the Project
@@ -58,6 +59,7 @@ class ProjectController extends Controller
         // Redirect to the Projects index
         return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
     }
+    
 
     public function destroy(Project $project)
     {
