@@ -42,7 +42,7 @@
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
         <h1 class="my-4">Subtasks</h1>
 
-        <a href="{{ route('subtasks.create', $projectId) }}" class="btn btn-primary mb-3">Create Subtask</a>
+        <a href="{{ route('subtasks.create', $project) }}" class="btn btn-primary mb-3">Create Subtask</a>
 
         <ul class="list-group">
             @forelse($subtasks as $subtask)
@@ -50,8 +50,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <span class="font-weight-bold">{{ $subtask->name }}</span>
                         <div class="btn-group" role="group">
-                            <a href="{{ route('subtasks.edit', ['project' => $projectId, 'subtask' => $subtask->id]) }}" class="btn btn-primary btn-sm">Edit</a>
-                            <form action="{{ route('subtasks.destroy', ['project' => $projectId, 'subtask' => $subtask->id]) }}" method="POST">
+                            <a href="{{ route('subtasks.edit', ['project' => $project, 'subtask' => $subtask->id]) }}" class="btn btn-primary btn-sm">Edit</a>
+                            <form action="{{ route('subtasks.destroy', ['project' => $project, 'subtask' => $subtask->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>

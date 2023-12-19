@@ -52,8 +52,7 @@ class SubtaskController extends Controller
 
     public function destroy(Project $project, Subtask $subtask)
     {
-        $this->authorize('delete', $subtask);
-
+        
         $subtask->delete();
 
         return redirect()->route('subtasks.index', ['project' => $project])->with('success', 'Subtask deleted successfully!');

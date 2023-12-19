@@ -173,6 +173,22 @@
     letter-spacing: 14px;
     line-height: normal;
 }
+.desktop .image-container {
+    position: absolute;
+    width: 564px;
+    height: 358px;
+    top: 333px;
+    left: 771px;
+    background-color: #dde1ff;
+    border-radius: 6px;
+    overflow: hidden; /* Ensure the image does not exceed the container */
+}
+
+.desktop .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
 
 
 
@@ -189,7 +205,11 @@
             
                 <div class="desktop">
                     <div class="div">
-                        <div class="rectangle"></div>
+                
+                        <div class="image-container">
+                            <img src="https://file.hstatic.net/1000273687/file/blog_tu_data_analyst_len_project_manager1_d2f49715e8744de5a3674656cd4aa63a_grande.png" alt="Your Image Description">
+                        </div>
+
                         <div class="group">
                             <div class="text-wrapper">Project Management Website</div>
                             <p class="p">In the fast-paced world of project execution, seamless collaboration and efficient task
