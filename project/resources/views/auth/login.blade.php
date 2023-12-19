@@ -123,7 +123,7 @@
                     <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
                     <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
                 </label>
-            </div>
+            </div><br>
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))
@@ -132,12 +132,13 @@
                     </a>
                 @endif
 
-                <button class="primary-button ms-3" type="submit">{{ __('Log in') }}</button>
-            </div>
+                
+            </div><br>
+            <button class="primary-button ms-3" type="submit">{{ __('Log in') }}</button>
         </form>
 
         <div class="signup-link">
-            <p>Don't have an account? >{{ __('Register') }}</a></p>
+            <p>Don't have an account?<a href='register'> {{ __('Register') }}</a></p>
         </div>
     </div>
 

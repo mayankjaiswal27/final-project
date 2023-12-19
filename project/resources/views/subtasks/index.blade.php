@@ -39,8 +39,68 @@
  @extends('layouts.app1')
 
 @section('content')
+<style>
+    .max-w-2xl {
+        margin: 20px auto;
+        max-width: 600px;
+    }
+
+    .btn {
+        margin-bottom: 10px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-primary:hover {
+        background-color: #218838;
+    }
+
+    .list-group {
+        margin-top: 20px;
+    }
+
+    .list-group-item {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        padding: 15px; /* Add padding to list items */
+    }
+
+    .list-group-item .font-weight-bold {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .btn-group {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+
+    .alert {
+        margin-top: 20px;
+    }
+</style>
+
     <div class="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-        <h1 class="my-4">Subtasks</h1>
+        <h1 class="my-4"><b>Subtasks:</b></h1><br>
 
         <a href="{{ route('subtasks.create', $project) }}" class="btn btn-primary mb-3">Create Subtask</a>
 

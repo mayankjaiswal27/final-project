@@ -26,7 +26,12 @@
                 border-radius: 4px;
                 cursor: pointer;
                 font-size: 16px;
-               
+            }
+    
+            .desktop .button a {
+                color: #fff; /* Set the text color to white */
+                text-decoration: none;
+                font-size:20px; 
             }
     
             .desktop .overlap-group-wrapper {
@@ -52,157 +57,112 @@
                 top: 16px;
                 font-family: "Inter-Regular", Helvetica;
                 font-weight: 400;
-                color: #6e58ff; /* Purple color */
+                color: #fff; /* Set the text color to white */
                 font-size: 20px;
                 letter-spacing: 3.5px;
                 line-height: normal;
                 white-space: nowrap;
             }
+    
             .desktop {
-    background-color: #ffffff;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-}
-.desktop .div {
-    background-color: #ffffff;
-    width: 1440px;
-    height: 1024px;
-    position: relative;
-}
-.desktop .rectangle {
-    position: absolute;
-    width: 564px;
-    height: 358px;
-    top: 333px;
-    left: 771px;
-    background-color: #dde1ff;
-    border-radius: 6px;
-}
-.desktop .group {
-    position: absolute;
-    width: 552px;
-    height: 233px;
-    top: 396px;
-    left: 151px;
-}
-.desktop .text-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-family: "Poppins-Bold", Helvetica;
-    font-weight: 700;
-    color: #000000;
-    font-size: 35px;
-    letter-spacing: 0;
-    line-height: normal;
-    animation: floatAnimation 1.5s;
-}
-.desktop .p {
-    position: absolute;
-    width: 548px;
-    top: 53px;
-    left: 0;
-    font-family: "Poppins-Regular", Helvetica;
-    font-weight: 400;
-    color: #a5a5a5;
-    font-size: 20px;
-    letter-spacing: 0;
-    line-height: normal;
-    animation: floatAnimation 1.5s;
-}
-.desktop .overlap-group-wrapper {
-    position: absolute;
-    width: 189px;
-    height: 57px;
-    top: 759px;
-    left: 771px;
-}
-.desktop .overlap-group {
-    position: relative;
-    width: 187px;
-    height: 57px;
-    background-image: url(./img/rectangle-6.svg);
-    background-size: 100% 100%;
-}
-.desktop .text-wrapper-2 {
-    position: absolute;
-    top: 16px;
-    left: 62px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 20px;
-    letter-spacing: 3.5px;
-    line-height: normal;
-    white-space: nowrap;
-}
-.desktop .overlap-wrapper {
-    position: absolute;
-    width: 189px;
-    height: 57px;
-    top: 759px;
-    left: 1148px;
-}
-.desktop .overlap {
-    position: relative;
-    width: 187px;
-    height: 57px;
-    background-image: url(./img/image.svg);
-    background-size: 100% 100%;
-}
-.desktop .text-wrapper-3 {
-    position: absolute;
-    top: 16px;
-    left: 48px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 20px;
-    letter-spacing: 3.5px;
-    line-height: normal;
-    white-space: nowrap;
-}
-.desktop .text-wrapper-4 {
-    position: absolute;
-    top: 105px;
-    left: 333px;
-    font-family: "Inter-Regular", Helvetica;
-    font-weight: 400;
-    color: #000000;
-    font-size: 80px;
-    letter-spacing: 14px;
-    line-height: normal;
-    animation: floatAnimation 1.5s;
-}
-.desktop .image-container {
-    position: absolute;
-    width: 564px;
-    height: 358px;
-    top: 333px;
-    left: 771px;
-    background-color: #dde1ff;
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.desktop .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    animation: floatAnimation 1.5s;
-}
-
-@keyframes floatAnimation {
-      0% {
-        transform: translateY(-100px);
-      }
-      100% {
-        transform: translateY(0px); 
-      }
-    }
-
+                background-color: #ffffff;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                width: 100%;
+            }
+    
+            .desktop .div {
+                background-color: #ffffff;
+                width: 1440px;
+                height: 1024px;
+                position: relative;
+            }
+    
+            .desktop .rectangle {
+                position: absolute;
+                width: 564px;
+                height: 358px;
+                top: 333px;
+                left: 771px;
+                background-color: #dde1ff;
+                border-radius: 6px;
+            }
+    
+            .desktop .group {
+                position: absolute;
+                width: 552px;
+                height: 233px;
+                top: 396px;
+                left: 151px;
+            }
+    
+            .desktop .text-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                font-family: "Poppins-Bold", Helvetica;
+                font-weight: 700;
+                color: #000000;
+                font-size: 35px;
+                letter-spacing: 0;
+                line-height: normal;
+                animation: floatAnimation 1.5s;
+            }
+    
+            .desktop .p {
+                position: absolute;
+                width: 548px;
+                top: 53px;
+                left: 0;
+                font-family: "Poppins-Regular", Helvetica;
+                font-weight: 400;
+                color: #a5a5a5;
+                font-size: 20px;
+                letter-spacing: 0;
+                line-height: normal;
+                animation: floatAnimation 1.5s;
+            }
+    
+            .desktop .text-wrapper-4 {
+                position: absolute;
+                top: 105px;
+                left: 333px;
+                font-family: "Inter-Regular", Helvetica;
+                font-weight: 400;
+                color: #000000;
+                font-size: 80px;
+                letter-spacing: 14px;
+                line-height: normal;
+                animation: floatAnimation 1.5s;
+            }
+    
+            .desktop .image-container {
+                position: absolute;
+                width: 564px;
+                height: 358px;
+                top: 333px;
+                left: 771px;
+                background-color: #dde1ff;
+                border-radius: 6px;
+                overflow: hidden;
+            }
+    
+            .desktop .image-container img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; 
+                animation: floatAnimation 1.5s;
+            }
+    
+            @keyframes floatAnimation {
+                0% {
+                    transform: translateY(-100px);
+                }
+                100% {
+                    transform: translateY(0px); 
+                }
+            }
         </style>
       
     </head>

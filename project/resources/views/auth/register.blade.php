@@ -139,8 +139,9 @@
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
-                <button class="primary-button ms-4" type="submit">{{ __('Register') }}</button>
-            </div>
+                
+            </div><br>
+            <button class="primary-button ms-4" type="submit">{{ __('Register') }}</button>
         </form>
 
         <div class="login-link">
