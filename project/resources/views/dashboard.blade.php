@@ -25,6 +25,7 @@
   height: 83px;
   top: 33px;
   left: 30px;
+  animation: floatAnimation 1.5s;
 }
 
 .desktop .text-wrapper {
@@ -67,6 +68,7 @@
   left: 0;
   background-color: #e9d9ff;
   border-radius: 6px;
+  animation: floatAnimation 1.5s;
 }
 
 .desktop .text-wrapper-2 {
@@ -327,6 +329,7 @@
   left: 0;
   background-color: #f4f4f4;
   border-radius: 11px;
+  animation: floatAnimation 1.5s;
 }
 
 
@@ -428,6 +431,7 @@
   font-size: 35px;
   letter-spacing: 0;
   line-height: normal;
+  animation: floatAnimation 1.5s;
 }
 .frame {
   display: grid;
@@ -449,12 +453,22 @@
 /* Remove individual positioning properties */
 .overlap-3 {
   position: static;
+  animation: floatAnimation 1.5s;
 }
 
 /* Remove positioning properties */
 .group-9 {
   position: static;
-}</style>
+}
+@keyframes floatAnimation {
+      0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(0px); /* Adjust the floating distance as needed */
+      }
+    }
+</style>
   <div class="py-12">
       <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
           <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -464,17 +478,10 @@
                       <div class="div">
                         <div class="group">
                           <div class="text-wrapper-11">Welcome, {{ Auth::user()->name }}</div>
-                          {{-- <p class="p">You’ve some tasks to do today!</p> --}}
+                          
                         </div>
                         <div class="group-2">
-                          {{-- <div class="overlap">
-                            <div class="text-wrapper-2">Tasks to complete</div>
-                            <p class="element"><span class="span">15</span> <span class="text-wrapper-3">/20</span></p>
-                          </div>
-                          <div class="overlap-group">
-                            <p class="element-2"><span class="span">95</span> <span class="text-wrapper-3">%</span></p>
-                            <div class="text-wrapper-4">Completion Rate</div>
-                          </div> --}}
+                        
                           <div class="overlap">
                             <p class="element-projects"><span class="span">{{app('App\Http\Controllers\ProjectController')->getCountOfProjects()}} </span> <span class="text-wrapper-3">projects</span></p>
                             <div class="text-wrapper-4">Total Projects</div>
