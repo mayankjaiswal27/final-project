@@ -97,6 +97,7 @@
     font-size: 35px;
     letter-spacing: 0;
     line-height: normal;
+    animation: floatAnimation 1.5s;
 }
 .desktop .p {
     position: absolute;
@@ -109,6 +110,7 @@
     font-size: 20px;
     letter-spacing: 0;
     line-height: normal;
+    animation: floatAnimation 1.5s;
 }
 .desktop .overlap-group-wrapper {
     position: absolute;
@@ -172,6 +174,7 @@
     font-size: 80px;
     letter-spacing: 14px;
     line-height: normal;
+    animation: floatAnimation 1.5s;
 }
 .desktop .image-container {
     position: absolute;
@@ -181,16 +184,24 @@
     left: 771px;
     background-color: #dde1ff;
     border-radius: 6px;
-    overflow: hidden; /* Ensure the image does not exceed the container */
+    overflow: hidden;
 }
 
 .desktop .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    object-fit: cover; 
+    animation: floatAnimation 1.5s;
 }
 
-
+@keyframes floatAnimation {
+      0% {
+        transform: translateY(-100px);
+      }
+      100% {
+        transform: translateY(0px); 
+      }
+    }
 
         </style>
       
@@ -213,7 +224,7 @@
                         <div class="group">
                             <div class="text-wrapper">Project Management Website</div>
                             <p class="p">In the fast-paced world of project execution, seamless collaboration and efficient task
-                                management are the cornerstones of success. Introducing [Your Project Management Platform], your
+                                management are the cornerstones of success. Introducing Projectify, your
                                 ultimate destination for empowering teams, streamlining workflows, and achieving project milestones
                                 with ease.</p>
                         </div>

@@ -68,10 +68,10 @@ public function update(Request $request, Project $project)
     return redirect()->route('projects.index')->with('success', 'Project updated successfully!');
 }
 
-public function destroy(Project $project): RedirectResponse
+public function destroy(Project $project)
 {
-    // Authorization check
-    $this->authorize('delete', $project);
+    
+    
 
     $project->delete();
 
